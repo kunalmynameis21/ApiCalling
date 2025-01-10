@@ -1,5 +1,11 @@
 package com.example.api_calling_android_d1
 
+import com.example.api_calling_android_d1.models.AlbumModel
+import com.example.api_calling_android_d1.models.CommentsModel
+import com.example.api_calling_android_d1.models.PhotosModel
+import com.example.api_calling_android_d1.models.PostsModel
+import com.example.api_calling_android_d1.models.ToDoModel
+import com.example.api_calling_android_d1.models.UsersModel
 import io.reactivex.Observable
 import retrofit2.http.GET
 
@@ -22,7 +28,7 @@ interface ApiService {
 
     @GET("photos")
 
-    fun getPhotosList(): Observable<List<PostsModel>>
+    fun getPhotosList(): Observable<List<PhotosModel>>
 
 
     @GET("todos")

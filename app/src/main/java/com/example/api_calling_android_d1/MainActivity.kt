@@ -2,11 +2,11 @@ package com.example.api_calling_android_d1
 
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ListView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.example.api_calling_android_d1.R.id.lstview
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import retrofit2.Retrofit
@@ -20,6 +20,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
+
+
+        val todoListView = findViewById<ListView>(lstview)
         val button1 = findViewById<Button>(R.id.toapi)
         button1.setOnClickListener{
             val retrofit= Retrofit.Builder()
@@ -31,7 +34,9 @@ class MainActivity : AppCompatActivity() {
             retrofit.observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .subscribe {
-                    Toast.makeText(this, "${it[0].userId}", Toast.LENGTH_LONG).show()
+
+                    todoListView.adapter = ToDoListAdapter(it,this)
+                    Toast.makeText(this, "Todos Data Display", Toast.LENGTH_LONG).show()
                 }
 
         }
@@ -47,7 +52,8 @@ class MainActivity : AppCompatActivity() {
             retrofit.observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .subscribe {
-                    Toast.makeText(this, "${it[0].email}", Toast.LENGTH_LONG).show()
+                    todoListView.adapter = CommentsListAdapter(it,this)
+                    Toast.makeText(this, "Comments Data Display", Toast.LENGTH_LONG).show()
                 }
 
         }
@@ -63,6 +69,7 @@ class MainActivity : AppCompatActivity() {
             retrofit.observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .subscribe {
+                    todoListView.adapter = AlbumListAdapter(it,this)
                     Toast.makeText(this, "${it[0].id}", Toast.LENGTH_LONG).show()
                 }
 
@@ -79,6 +86,8 @@ class MainActivity : AppCompatActivity() {
             retrofit.observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .subscribe {
+
+                    todoListView.adapter = PhotoListAdapter(it,this)
                     Toast.makeText(this, "${it[0].id}", Toast.LENGTH_LONG).show()
                 }
 
@@ -95,6 +104,7 @@ class MainActivity : AppCompatActivity() {
             retrofit.observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .subscribe {
+                    todoListView.adapter = UsersListAdapter(it,this)
                     Toast.makeText(this, "${it[0].name}", Toast.LENGTH_LONG).show()
                 }
 
@@ -111,10 +121,15 @@ class MainActivity : AppCompatActivity() {
             retrofit.observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .subscribe {
+
+                    todoListView.adapter = PostListAdapter(it,this)
                     Toast.makeText(this, "${it[0].id}", Toast.LENGTH_LONG).show()
                 }
 
         }
+
+
+
 
 
     }

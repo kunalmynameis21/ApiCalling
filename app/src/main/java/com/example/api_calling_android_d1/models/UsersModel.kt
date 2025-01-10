@@ -1,15 +1,15 @@
-package com.example.api_calling_android_d1
+package com.example.api_calling_android_d1.models
 
 data class UsersModel(
 
-val id: Long,
-val name: String,
-val username: String,
-val email: String,
-val address: Address,
-val phone: String,
-val website: String,
-val company: Company,
+   val id: Long,
+   val name: String,
+   val username: String,
+   val email: String,
+   val address: Address,
+   val phone: String,
+   val website: String,
+   val company: Company,
 )
 
 data class Address(

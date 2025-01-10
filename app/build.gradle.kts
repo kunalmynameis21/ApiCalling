@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.api_calling_android_d1"
-        minSdk = 31
+        minSdk = 30
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"

@@ -1,4 +1,4 @@
-package com.example.api_calling_android_d1
+package com.example.api_calling_android_d1.models
 
 data class CommentsModel(
 

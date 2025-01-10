@@ -8,52 +8,82 @@
     tools:context=".MainActivity"
     android:orientation="vertical">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="50dp">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Call Todo api"
-        android:id="@+id/toapi"
-        android:layout_gravity="center"
-        android:layout_marginTop="50dp"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Call Comments api"
-        android:id="@+id/coapi"
-        />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tod api1"
+            android:id="@+id/toapi"
+            android:layout_gravity="center"
+            android:layout_marginLeft="25dp"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Cmt api2"
+            android:id="@+id/coapi"
+            android:layout_marginLeft="7dp"
+            />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Call Album api"
-        android:id="@+id/albapi"
-        />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Alb api3"
+            android:id="@+id/albapi"
+            android:layout_marginLeft="7dp"
+            />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Call Photo api"
-        android:id="@+id/phapi"
-        />
 
-    <Button
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Pho api4"
+            android:id="@+id/phapi"
+            android:layout_marginLeft="25dp"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Usr api5"
+            android:id="@+id/usapi"
+            android:layout_marginLeft="7dp"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Pst api"
+            android:id="@+id/poapi"
+            android:layout_marginLeft="7dp"
+            />
+
+    </LinearLayout>
+
+
+
+
+
+
+    <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Call Users api"
-        android:id="@+id/usapi"
-        />
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Call Posts api"
-        android:id="@+id/poapi"
-        />
+        android:id="@+id/lstview"/>
 
 
 </LinearLayout>
